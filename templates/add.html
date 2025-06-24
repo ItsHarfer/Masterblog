@@ -1,7 +1,14 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 <div class="post">
-    <h2>Send us a message</h2>
+    <h2>Add a new post</h2>
     <form action="/add" method="POST">
       <label for="author">Author Name</label>
       <input type="text" id="author" name="author" required>

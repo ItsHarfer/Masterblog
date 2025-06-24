@@ -173,3 +173,22 @@ form button:hover {
     margin-left: 5px;
     font-weight: normal;
 }
+.btn-like {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-like:hover {
+    background-color: #e60000;
+}
+
+.like-count {
+    margin-left: 5px;
+    font-weight: normal;
+}
