@@ -11,9 +11,11 @@
     <a href="/add" class="add-button">+</a>
     {% for post_id, post in posts.items() %}
     <div class="post">
+        <a href="/update/{{ post_id }}" class="update-button" title="Update post">✎</a>
         <form action="/delete/{{ post_id }}" method="POST" class="delete-form">
             <button type="submit" class="delete-button" title="Delete post">x</button>
         </form>
+
         <h2>{{post.title}}</h2>
         <p><em>{{post.author}}</em></p>
         <p>{{post.content}}</p>

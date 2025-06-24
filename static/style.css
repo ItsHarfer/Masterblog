@@ -48,6 +48,7 @@ form textarea {
 form textarea {
     resize: vertical;
     min-height: 120px;
+    height: 444px;
 }
 
 form button {
@@ -123,4 +124,52 @@ form button:hover {
 
 .delete-button:hover {
   background-color: #c0392b;
+}
+
+.update-button {
+  position: absolute;
+  top: 17px;
+  right: 52px;
+  width: 36px;
+  height: 36px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 36px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.update-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.btn-like {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-like:hover {
+    background-color: #e60000;
+}
+
+.like-count {
+    margin-left: 5px;
+    font-weight: normal;
 }
