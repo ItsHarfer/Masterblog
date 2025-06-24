@@ -51,7 +51,7 @@ form textarea {
 }
 
 form button {
-    margin-top: 20px;
+    margin-top: 5px;
     background-color: #4F4F4F;
     color: #FFF;
     border: none;
@@ -85,4 +85,42 @@ form button:hover {
 
 .add-button:hover {
     background-color: #333;
+}
+
+.post {
+  position: relative; /* wichtig für absolute Positionierung */
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.delete-form {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin: 0;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
 }
