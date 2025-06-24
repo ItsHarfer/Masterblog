@@ -16,6 +16,9 @@ h1 {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post h2 {
@@ -24,4 +27,62 @@ h1 {
 
 .post p {
     margin: 10px 0;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    margin-top: 20px;
+    background-color: #4F4F4F;
+    color: #FFF;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+.add-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #4F4F4F;
+    color: white;
+    border-radius: 50%;
+    font-size: 36px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.add-button:hover {
+    background-color: #333;
 }
