@@ -7,6 +7,24 @@ from flask import render_template, request
 app = Flask(__name__)
 
 
+def fetch_post_by_id(post_id):
+    with open("data/posts.json", "r") as f:
+        blog_posts = json.load(f)
+        if post_id in blog_posts:
+            return blog_posts[post_id]
+        else:
+            return None
+
+
+def get_posts():
+    with open("data/posts.json", "r") as f:
+        try:
+            blog_posts = json.load(f)
+        except json.JSONDecodeError:
+            blog_posts = {}
+    return blog_posts
+
+
 @app.route("/")
 def index():
     with open("data/posts.json", "r") as f:
@@ -22,15 +40,10 @@ def add():
         author = request.form["author"]
         title = request.form["title"]
         content = request.form["content"]
-        post = {post_id: {"author": author, "title": title, "content": content}}
+        post = {"author": author, "title": title, "content": content, "likes": 0}
 
-        with open("data/posts.json", "r") as f:
-            try:
-                blog_posts = json.load(f)
-            except json.JSONDecodeError:
-                blog_posts = []
-
-        blog_posts.append(post)
+        blog_posts = get_posts()
+        blog_posts[post_id] = post
 
         with open("data/posts.json", "w") as f:
             json.dump(blog_posts, f, indent=2)
@@ -42,16 +55,45 @@ def add():
 
 @app.route("/delete/<post_id>", methods=["POST"])
 def delete(post_id):
-    # Find the blog post with the given id and remove it from the list
-    with open("data/posts.json", "r") as f:
-        blog_posts = json.load(f)
-        if post_id in blog_posts:
-            del blog_posts[post_id]
-            with open("data/posts.json", "w") as f:
-                json.dump(blog_posts, f, indent=4)
+    # Get all posts
+    blog_posts = get_posts()
+    if post_id in blog_posts:
+        del blog_posts[post_id]
 
-        # Redirect back to the home page
+    with open("data/posts.json", "w") as f:
+        json.dump(blog_posts, f, indent=4)
+
+    # Redirect back to the home page
     return redirect(url_for("index"))
+
+
+@app.route("/update/<post_id>", methods=["GET", "POST"])
+def update(post_id):
+
+    post = fetch_post_by_id(post_id)
+    blog_posts = get_posts()
+
+    if post_id not in blog_posts:
+        return "Post not found", 404
+
+    if request.method == "POST":
+        # Update the post in the JSON file
+        updated_post = {
+            "author": request.form["author"],
+            "title": request.form["title"],
+            "content": request.form["content"],
+        }
+        blog_posts[post_id] = updated_post
+
+        with open("data/posts.json", "w") as f:
+            json.dump(blog_posts, f, indent=4)
+
+        # Redirect back to index
+        return redirect(url_for("index"))
+
+    # Else, it's a GET request
+    # So display the update.html page
+    return render_template("update.html", post=post, post_id=post_id)
 
 
 if __name__ == "__main__":
