@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "title": "Introduction to Blogging",
+    "content": "Welcome to my very first blog post! In this article, I share my motivations for starting this blog and what kind of content you can expect."
+  },
+  {
+    "id": 2,
+    "author": "Jane Doe",
+    "title": "Why Writing Matters",
+    "content": "Writing regularly improves your clarity of thought. In this post, I explore the benefits of maintaining a writing habit."
+  },
+  {
+    "id": 3,
+    "author": "John Doe",
+    "title": "Lessons from Post Number Three",
+    "content": "Today I’m reflecting on the process of creating consistent content. Here's what I’ve learned so far."
+  },
+  {
+    "id": 4,
+    "author": "Jane Doe",
+    "title": "The Art of Storytelling",
+    "content": "Storytelling is at the heart of good communication. I dive into techniques that help you tell more engaging stories."
+  },
+  {
+    "id": 5,
+    "author": "John Doe",
+    "title": "Blogging Milestone: Post Five",
+    "content": "This marks my fifth post! I discuss my journey so far, challenges encountered, and goals ahead."
+  },
+  {
+    "id": 6,
+    "author": "Jane Doe",
+    "title": "Reflections and Future Plans",
+    "content": "As I wrap up this first round of posts, I share reflections and some ideas I’m excited to write about in the future."
+  }
+]
